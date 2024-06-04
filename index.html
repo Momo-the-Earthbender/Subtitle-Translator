@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--doc props-->
+        <title>Subbed</title>
+
+        <!--meta data-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Links-->
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        
+        <!--CSS-->
+        <style>
+            /*Body Styles*/
+            :root {
+                /*Colors*/
+                --beige: #F5F5DC;
+                --blue: #253746;
+
+                --bg: var(--beige);
+                
+                --nav-blur: linear-gradient(60deg, rgba(255, 255, 255, 0.75) 0%, rgba(197, 189, 189, 0.5) 35%, rgba(100, 91, 91, 0.5) 100%);
+                --blur: blur(20px);
+            }
+
+            * {
+                /*border: 5px solid blue;*/
+
+                box-sizing: border-box;
+
+                scroll-behavior: smooth;
+            }
+
+            ::selection {
+                background: #000;
+            }
+
+            a {
+                color:#FFF;
+
+                text-decoration:none;
+            }
+
+            a:active {
+                background: #000;
+            }
+
+            a:hover {
+                background: #000;
+            }
+            
+            body {
+                background: var(--bg);
+                color: var(--color);
+
+                font: var(--font);
+                
+                margin:0px;
+
+                height: 100vh;
+                width: 100vw;
+            }
+
+            /*navbar styles*/
+            nav {
+                background: var(--nav-blur);
+                backdrop-filter: var(--blur);
+                color:#FFF;
+
+                margin: 0px;
+
+                width: 100%;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                position: fixed;
+                top: 0px;
+                left:0px;
+                
+                z-index: 1;
+            }
+
+                nav .img {
+                    background:url("img/logo.webp");
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                    width: 6em;
+                    height: 3em;
+                }
+
+                /*Server*/
+                nav menu {
+                    padding: 0px;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                    menu p {
+                        margin: 0px 2em 0px 0px;
+                    }
+
+                    label {
+                        background: none;
+
+                        font-size: 1.25em;
+
+                        padding: 0px;
+                        border: 2px solid gray;
+                        border-radius: 0.25em;
+                        margin: 0px 2em 0px 0px;
+                        margin-top: 0px;
+                    }
+
+                        label input {
+                            background: var(--beige);
+
+                            appearance: unset;
+
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;    
+                        }
+            
+            /*hero bar styles*/
+            header {
+                background:url("img/stranger things.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                display: flex;
+                align-items: end;
+                
+                padding: 7em;
+
+                box-sizing: border-box;
+
+                width: 100vw;
+                height: 100vh;
+            }
+
+            section {
+                display: flex;
+                justify-content: space-evenly;
+                align-content: center;
+
+                scroll-behavior: smooth;
+
+                height: 100vh;
+            }
+
+                /*Paste*/
+                textarea {
+                    font: inherit;
+
+                    text-align: center;
+                    align-content: center;
+
+                    resize: none;
+
+                    width: 50%;
+                }
+
+                /*Copy*/
+                .copy {
+                    background: #000;
+                    color: #FFF;
+
+                    text-align: center;
+                    align-content: center;
+
+                    width: 50%;
+                }
+
+            /*footer styles*/
+            footer {
+                font-style: italic;
+
+                padding: 3em;
+                padding-bottom: 0em;
+                padding-top: 1000px;
+
+                height: 100vh;
+            }
+
+                p {
+                    color: #ffffff;
+
+                    font:10rem;
+                }
+                
+                nav.foot {
+                    all:unset;
+
+                    margin:3em;
+
+                    justify-self: center;
+                }
+
+                    .foot menu {
+                        all:unset;
+
+                        list-style: none;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        box-sizing: border-box;
+                    }
+
+                    .foot a {
+                        all:unset;
+
+                        font-size: 1.25em;
+
+                        margin: 2em;
+                        justify-content: space-around;
+                    }
+                
+                address {
+                    margin: 3em;
+                }
+
+                .socials {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                    .socials a:first-of-type {
+                        background: url('img/snapchat.png');
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        
+                        margin: 3em;
+                        
+                        width:5em;
+                        height:5em;
+                    }
+
+                    .socials a:nth-of-type(2) {
+                        background: url('img/insta.webp');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        
+                        margin: 3em;
+
+                        width: 5em;
+                        height: 5em;
+                    }
+
+                    .socials a:last-of-type {
+                        background: url('img/fb.svg');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+
+                        margin: 3em;
+
+                        width: 5em;
+                        height: 5em;
+                    }
+        </style>
+    </head>
+
+    <body>
+        <!--Server-->
+        <nav>
+            <a href="#top" class="img"></a>
+
+            <menu>
+                <p>Select Server:</p>
+
+                <label for="1" onfocus="updateURL(0)" tabindex="1">
+                    <input type="radio" name="server" id="1">1</input> 
+                </label>
+    
+                <label for="2" onfocus="updateURL(1)" tabindex="2">
+                    <input type="radio" name="server" id="2">2</input>
+                </label>
+    
+                <label for="3" onfocus="updateURL(2)" tabindex="3">
+                    <input type="radio" name="server" id="3">3</input>
+                </label>
+    
+                <label for="4" onfocus="updateURL(3)" tabindex="4">
+                    <input type="radio" name="server" id="4">4</input>
+                </label>
+            </menu>
+        </nav>
+
+        <!--Hero-->
+        <header>
+            <h1>Subbed</h1>
+        </header>
+
+        <section>
+            <!--Paste-->
+            <textarea class="paste" cols="30" rows="10" placeholder="Paste Script" onchange="translatetxt(url)"></textarea>
+                        
+            <!--Copy-->
+            <span class="copy">Copy Text From Here</span>
+        </section>
+
+        <footer>
+            <address>
+                Copyright &copy; 2024, Muhammad<br>
+                Contact: <a href="mailto:john.smith@example.com" title="john.smith@example.com"></a>Sir.ali.of.aether@gmail.com</a><br>
+                195 NeoCity Way, 34744, Kissimmee, Florida USA
+            </address>
+
+            <div class="socials">
+                <a href="target_blank"></a>
+                <a href="target_blank"></a>
+                <a href="target_blank"></a>
+            </div>
+
+            <nav class="foot">
+                <menu>
+                    <a href="#" target="_blank"><li>Home</li></a>
+                    <a href="#" target="_blank"><li>Shop</li></a>
+                    <a href="#" target="_blank"><li>History</li></a>
+                    <a href="#" target="_blank"><li>Sign-in</li></a>
+                </menu>
+            </nav>
+        </footer>
+
+        <script>
+            function updateURL(id, callback) {
+                const urlList = ['https://libretranslate.com/translate', 'https://trans.zillyhuhn.com/translate', 'https://translate.terraprint.co/translate', 'https://libretranslate.eownerdead.dedyn.io/translate']
+                globalThis.url = urlList[id]
+                console.log(url);
+            }
+
+            async function translatetxt(url) {
+                const txt = Array.from(document.querySelector('.paste').value.split('\n'))
+                console.log('1.', url);
+
+                let out = []
+                txt.forEach(async line => {
+                    try {
+                        console.log('2.', line)
+                        
+                        //Fetch Opperation
+                        const res = await fetch(url, {
+                            method: "POST",
+    
+                            body: JSON.stringify({
+                                q: line,
+                                source: "en",
+                                target: "fa",
+                                format: "text"
+                            }),
+    
+                            headers: { "Content-Type": "application/json" }
+                        });
+    
+                        if (!res.ok) {
+                            throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`)
+                        }
+    
+                        const result = await res.json()
+                        
+                        out.push([line, result.translatedText])
+                    }
+                
+                    catch (error) {
+                        console.error("An error occurred:", error)
+                    }
+                })
+            
+                console.log('3.', out)
+                out.sort((a, b) => {
+                    console.log('4.', a)
+                    console.log(b)
+                    console.log(a[0])
+                    console.log(b[0])
+                    console.log(txt.indexOf(a[0]))
+                    txt.indexOf(a[0]) - txt.indexOf(b[0])
+                })
+                console.log('5.', out)
+                console.log('6.', out.map(item => item[1]))
+                document.querySelector('.copy').innerHTML = out.map(item => item[1])
+            }
+        </script>
+    </body>
+</html>
